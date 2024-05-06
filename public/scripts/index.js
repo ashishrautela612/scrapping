@@ -7,8 +7,8 @@ let count=0;
 //all required input fields
 const inputs={
     url:"https://www.linkedin.com/login",
-    email:"rimurutempest1861@gmail.com",
-    password:"Ashish@123",
+    email:"youremail.com",
+    password:"yourpassword",
     keyword:"education",
     region:"india",
     industry1:"higher Education",
