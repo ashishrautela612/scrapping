@@ -1,5 +1,4 @@
 const puppeteer = require("puppeteer");
-require('dotenv').config();
 const XLSX = require('xlsx');
 let finalData=[];//this is the object where our data will be stored
 let count=0;
@@ -7,15 +6,17 @@ let count=0;
 //all required input fields
 const inputs={
     url:"https://www.linkedin.com/login",
-    email:"rimurutempest1861@gmail.com",
-    password:"Ashish@123",
+    email:"yourmail@gmail.com",
+    password:"yourpassword",
     keyword:"education",
     region:"india",
     industry1:"higher Education",
     industry2:"Professional Services",
-    neededDataLength:50,
+    neededDataLength:20,
 }
 
+
+//main function
 const main = async () => {
 
     //launch browser
@@ -25,11 +26,11 @@ const main = async () => {
         width: 1200,
         height: 2000,
     });
-    await page.goto(inputs.url, { waitUntil: 'networkidle2' });
+    await page.goto(inputs.url, { waitUntil: 'networkidle2' });//redirect to given url
 
     // Login
     await page.waitForSelector("#username");
-    await page.type("#username", inputs.email, { delay: 100 });
+    await page.type("#username",inputs.email, { delay: 100 });//delay while entering data
 
     await page.waitForSelector("#password");
     await page.type("#password", inputs.password, { delay: 100 });
@@ -146,7 +147,7 @@ function convert(id) {
 
 //fetch data function
 async function fetchData(browser, page) {
-    if(finalData.length==inputs.neededDataLength){
+    if(finalData.length==inputs.neededDataLength-1){
         await saveDataToExcel(finalData);
         console.log(finalData);
         await page.close();
