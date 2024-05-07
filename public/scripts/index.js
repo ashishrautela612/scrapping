@@ -7,8 +7,8 @@ let count=0;
 //all required input fields
 const inputs={
     url:"https://www.linkedin.com/login",
-    email:"youremail.com",
-    password:"yourpassword",
+    email:"rimurutempest1861@gmail.com",
+    password:"Ashish@123",
     keyword:"education",
     region:"india",
     industry1:"higher Education",
@@ -143,23 +143,6 @@ function convert(id) {
     return returnedval
 }
 
-
-function mapCompanySizeToRange(size) {
-    if (size >= 1 && size <= 10) {
-        return "#companySize-B"
-    }
-    else if (size >= 11 && size <= 50) {
-        return "#companySize-C";
-    } else if (size >= 51 && size <= 200) {
-        return "#companySize-D";
-    } else if (size >= 201 && size <= 500) {
-        return "#companySize-E";
-    } else if (size >= 501 && size <= 1000) {
-        return "#companySize-F";
-    } else {
-        return "More than 1000";
-    }
-}
 
 //fetch data function
 async function fetchData(browser, page) {
